@@ -26,10 +26,12 @@ phases:
       - printf '[{"name":"nodeapp","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - cat imagedefinitions.json  
 
-
 reports:
   jest_reports:
     files:
       - report filename
     file-format: JUNITXML
     base-directory: test report directory
+    
+artifacts:
+  files: imagedefinitions.json
