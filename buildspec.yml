@@ -29,9 +29,11 @@ phases:
 reports:
   jest_reports:
     files:
-      - report filename
+      - report file
     file-format: JUNITXML
-    base-directory: test report directory
+    base-directory: test report
     
 artifacts:
   files: imagedefinitions.json
+  directory: test report
+    file: report file
