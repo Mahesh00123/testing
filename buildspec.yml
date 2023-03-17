@@ -4,6 +4,7 @@ phases:
   pre_build:
     commands:
       - npm install
+      - npm install jest --save-dev --legacy-peer-deps
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
@@ -28,12 +29,7 @@ phases:
       - echo Writing image definitions file...
       - printf '[{"name":"nodeapp","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - cat imagedefinitions.json   
-  reports:
-    jest_reports:
-      files:
-        - repot-file
-      file-format: JUNITXML
-      base-directory: test
+
       
   artifacts:
     files: imagedefinitions.json
