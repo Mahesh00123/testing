@@ -34,5 +34,4 @@ reports:
     base-directory: test report
     
 artifacts:
-  directory: test report
-    file: imagedefinitions.json, report file
+    file: imagedefinitions.json
