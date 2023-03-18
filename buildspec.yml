@@ -22,9 +22,9 @@ phases:
 reports:
   jest_reports:
     files:
-      - report file
+      - repot-file
     file-format: JUNITXML
-    base-directory: test report
+    base-directory: test
     
 post_build:
   commands:
