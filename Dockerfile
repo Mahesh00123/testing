@@ -10,7 +10,10 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN yarn install
+RUN npm install
+RUN npm install jest --save-dev --legacy-peer-deps
+RUN npm build
+RUN npm build
 # If you are building your code for production
 # RUN npm install --only=production
 
