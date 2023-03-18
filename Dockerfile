@@ -12,8 +12,7 @@ COPY package*.json ./
 
 RUN npm install
 RUN npm install jest --save-dev --legacy-peer-deps
-RUN npm build
-RUN npm build
+RUN npm test
 # If you are building your code for production
 # RUN npm install --only=production
 
@@ -21,6 +20,6 @@ RUN npm build
 COPY . .
 
 EXPOSE 3000
-CMD [ "yarn", "start" , "test" ]
+CMD [ "npm", "start" , "test" ]
 
 # This is dummy change for git demo
