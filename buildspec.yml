@@ -5,7 +5,7 @@ phases:
     commands:
       - npm install
       - npm install --save-dev jest-junit
-      - npm test
+      - yarn test
       - npm build
       - echo Logging in to Amazon ECR...
       - aws --version
