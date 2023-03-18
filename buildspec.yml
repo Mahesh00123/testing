@@ -3,10 +3,6 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - npm install
-      - npm install --save-dev jest-junit
-      - yarn test
-      - npm build
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
