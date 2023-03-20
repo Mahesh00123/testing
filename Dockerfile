@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN yarn install
+RUN npm install
 
 # If you are building your code for production
 # RUN npm install --only=production
@@ -19,7 +19,7 @@ RUN yarn install
 COPY . .
 
 EXPOSE 3000
-CMD [ "yarn", "run.js ]
+CMD [ "npm", "run.js ]
 
 # This is dummy change for git demo
 
