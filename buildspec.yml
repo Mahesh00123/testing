@@ -14,12 +14,4 @@ build:
  commands:
   - echo Running tests
   - npm test
-  - echo building and tagging Docker images
-  - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 609174845388.dkr.ecr.us-east-2.amazonaws.com
-  - docker build -t vea .
-  - docker tag vea:latest 609174845388.dkr.ecr.us-east-2.amazonaws.com/vea:latest
 
-post_build:
- commands:
-  - echo pushing to ECR
-  - docker push 609174845388.dkr.ecr.us-east-2.amazonaws.com/vea:latest
