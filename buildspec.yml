@@ -20,15 +20,7 @@ phases:
       - echo Building the Docker image...
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
-
-  reports:
-   jest_reports:
-    files:
-      - repot-file
-    file-format: JUNITXML
-    base-directory: test
-
-    
+  
   post_build:
     commands:
       - echo Build completed on `date`
@@ -38,5 +30,12 @@ phases:
       - echo Writing image definitions file...
       - printf '[{"name":"nodeapp","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - cat imagedefinitions.json 
+      
+reports:
+   jest_reports:
+    files:
+      - repot-file
+    file-format: JUNITXML
+    base-directory: test      
 artifacts:
     files: imagedefinitions.json
